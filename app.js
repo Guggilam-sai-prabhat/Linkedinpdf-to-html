@@ -57,17 +57,17 @@ function extractSection(text, startKeyword, endKeywordPattern, fallbackEndPatter
         }
     }
     
-    // Log start and end indices specifically for the "Certifications" section
-    if (startKeyword === "Certifications") {
-        console.log(`'Certifications' start index: ${startIndex}`);
-        console.log(`'Certifications' end index: ${endIndex}`);
-        console.log(`Extracted 'Certifications' content: ${text.substring(startIndex, endIndex).trim()}`);
-    }
+    // // Log start and end indices specifically for the "Certifications" section
+    // if (startKeyword === "Certifications") {
+    //     console.log(`'Certifications' start index: ${startIndex}`);
+    //     console.log(`'Certifications' end index: ${endIndex}`);
+    //     console.log(`Extracted 'Certifications' content: ${text.substring(startIndex, endIndex).trim()}`);
+    // }
 
-    if (startIndex < startKeyword.length || endIndex <= startIndex) {
-        console.log(`Failed to find section correctly: ${startKeyword} to ${endKeywordPattern}`);
-        return "Section not found";
-    }
+    // if (startIndex < startKeyword.length || endIndex <= startIndex) {
+    //     console.log(`Failed to find section correctly: ${startKeyword} to ${endKeywordPattern}`);
+    //     return "Section not found";
+    // }
 
     return text.substring(startIndex, endIndex).trim();
 }
