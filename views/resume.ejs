@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title><%= resume.title ? resume.title + ' HTML file' : 'Generated Resume' %></title>
+<style>
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #333;
+    }
+    .container {
+        width: 90%;
+        max-width: 960px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the container */
+    }
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; /* Evenly space the columns */
+    }
+    .column {
+        flex: 1; /* Each column takes equal width */
+        padding: 20px;
+        text-align: left; /* Align text to the left within each column */
+    }
+    h1.center {
+        text-align: center;
+        width: 100%;
+        color: #0056b3; /* A deep blue for the main title */
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    h2 {
+        color: #0073b1; /* Slightly lighter blue for subtitles */
+        margin-top: 10px;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 5px;
+    }
+    pre {
+        background-color: #e8e8e8;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+        white-space: pre-wrap; /* Maintains white space but wraps text */
+        word-wrap: break-word;
+    }
+    section {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center"><%= resume.title ? resume.title + ' HTML file' : 'Generated Resume' %></h1>
+        <div class="row">
+            <div class="column">
+                <h2>Contact</h2>
+                <pre><%= resume.contact %></pre>
+                <h2>Skills</h2>
+                <pre><%= resume.skills %></pre>
+                <h2>Certifications</h2>
+                <pre><%= resume.certifications %></pre>
+            </div>
+            <div class="column">
+                <section>
+                    <h2>Summary</h2>
+                    <p><%= resume.summary %></p>
+                </section>
+                <section>
+                    <h2>Experience</h2>
+                    <p><%= resume.experience %></p>
+                </section>
+                <section>
+                    <h2>Education</h2>
+                    <p><%= resume.education %></p>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
